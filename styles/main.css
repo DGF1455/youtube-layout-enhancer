@@ -1,0 +1,174 @@
+/* main.css */
+:root {
+    --yt-enhanced-primary: #ff0000;
+    --yt-enhanced-secondary: #606060;
+    --yt-enhanced-background: #ffffff;
+    --yt-enhanced-text: #030303;
+    --yt-enhanced-hover: #f2f2f2;
+    --yt-enhanced-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --yt-enhanced-radius: 8px;
+    --yt-enhanced-transition: all 0.3s ease;
+  }
+  
+  /* Dark theme support */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --yt-enhanced-background: #0f0f0f;
+      --yt-enhanced-text: #ffffff;
+      --yt-enhanced-secondary: #aaaaaa;
+      --yt-enhanced-hover: #272727;
+    }
+  }
+  
+  /* Custom layout styles */
+  .custom-youtube-layout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 16px;
+    padding: 16px;
+    height: 100vh;
+    box-sizing: border-box;
+  }
+  
+  /* Panel styles */
+  .enhanced-panel {
+    background: var(--yt-enhanced-background);
+    border-radius: var(--yt-enhanced-radius);
+    box-shadow: var(--yt-enhanced-shadow);
+    overflow: hidden;
+    transition: var(--yt-enhanced-transition);
+    position: relative;
+  }
+  
+  .enhanced-panel:hover {
+    box-shadow: var(--yt-enhanced-shadow), 0 0 0 2px var(--yt-enhanced-primary);
+  }
+  
+  /* Video player enhancements */
+  .enhanced-player-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Custom controls */
+  .enhanced-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    opacity: 0;
+    transition: var(--yt-enhanced-transition);
+  }
+  
+  .enhanced-player-container:hover .enhanced-controls {
+    opacity: 1;
+  }
+  
+  /* Control buttons */
+  .enhanced-button {
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--yt-enhanced-transition);
+  }
+  
+  .enhanced-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Thumbnail preview */
+  .thumbnail-preview {
+    position: absolute;
+    z-index: 1000;
+    background: var(--yt-enhanced-background);
+    border-radius: var(--yt-enhanced-radius);
+    box-shadow: var(--yt-enhanced-shadow);
+    padding: 8px;
+    pointer-events: none;
+    opacity: 0;
+    transition: var(--yt-enhanced-transition);
+  }
+  
+  .thumbnail-preview.visible {
+    opacity: 1;
+  }
+  
+  /* Context menu */
+  .custom-context-menu {
+    position: fixed;
+    background: var(--yt-enhanced-background);
+    border-radius: var(--yt-enhanced-radius);
+    box-shadow: var(--yt-enhanced-shadow);
+    padding: 8px 0;
+    min-width: 200px;
+    z-index: 10000;
+  }
+  
+  .context-menu-item {
+    padding: 8px 16px;
+    cursor: pointer;
+    color: var(--yt-enhanced-text);
+    transition: var(--yt-enhanced-transition);
+  }
+  
+  .context-menu-item:hover {
+    background: var(--yt-enhanced-hover);
+  }
+  
+  /* Cinema mode */
+  .cinema-mode {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 1200px) {
+    .custom-youtube-layout {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  /* Toast notifications */
+  .enhanced-toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: var(--yt-enhanced-background);
+    color: var(--yt-enhanced-text);
+    padding: 12px 24px;
+    border-radius: var(--yt-enhanced-radius);
+    box-shadow: var(--yt-enhanced-shadow);
+    animation: slideIn 0.3s ease, fadeOut 0.3s ease 2.7s forwards;
+    z-index: 10000;
+  }
+  
+  @keyframes fadeOut {
+    to { opacity: 0; }
+  }

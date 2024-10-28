@@ -1,0 +1,61 @@
+<!-- popup.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Layout Enhancer</title>
+    <link rel="stylesheet" href="styles/popup.css">
+</head>
+<body>
+    <div class="popup-container">
+        <!-- Header -->
+        <header class="popup-header">
+            <img src="icons/icon48.png" alt="Logo" class="logo">
+            <h1>YouTube Layout Enhancer</h1>
+        </header>
+
+        <!-- Quick Actions -->
+        <div class="quick-actions">
+            <button id="toggleLayout" class="action-button">
+                <span class="icon">📐</span>
+                <span>Toggle Layout</span>
+            </button>
+            <button id="toggleCinema" class="action-button">
+                <span class="icon">🎦</span>
+                <span>Cinema Mode</span>
+            </button>
+        </div>
+
+        <!-- Features -->
+        <div class="features-section">
+            <h2>Features</h2>
+            <div class="feature-toggles">
+                <label class="toggle-item">
+                    <span>Enhanced Player</span>
+                    <input type="checkbox" id="enhancedPlayer">
+                    <span class="toggle-slider"></span>
+                </label>
+                <label class="toggle-item">
+                    <span>Thumbnail Previews</span>
+                    <input type="checkbox" id="thumbnailPreviews">
+                    <span class="toggle-slider"></span>
+                </label>
+                <label class="toggle-item">
+                    <span>Custom Layout</span>
+                    <input type="checkbox" id="customLayout">
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="popup-footer">
+            <button id="settingsButton" class="text-button">Settings</button>
+            <span class="version">v1.0.0</span>
+            <button id="helpButton" class="text-button">Help</button>
+        </footer>
+    </div>
+    <script src="scripts/popup.js"></script>
+</body>
+</html>

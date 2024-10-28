@@ -1,0 +1,147 @@
+<!-- welcome.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to YouTube Layout Enhancer</title>
+    <link rel="stylesheet" href="styles/welcome.css">
+</head>
+<body>
+    <div class="welcome-container">
+        <!-- Hero Section -->
+        <header class="hero">
+            <img src="icons/icon128.png" alt="YouTube Layout Enhancer" class="logo">
+            <h1>Welcome to YouTube Layout Enhancer</h1>
+            <p class="subtitle">Transform your YouTube experience with powerful customization features</p>
+        </header>
+
+        <!-- Feature Highlights -->
+        <section class="features">
+            <h2>Key Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📐</div>
+                    <h3>Custom Layout</h3>
+                    <p>Arrange your YouTube interface exactly how you want it with resizable panels and customizable positions.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎮</div>
+                    <h3>Enhanced Player</h3>
+                    <p>Advanced playback controls, custom shortcuts, and improved video navigation features.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">👁️</div>
+                    <h3>Thumbnail Previews</h3>
+                    <p>See video previews on hover without leaving your current page.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎦</div>
+                    <h3>Cinema Mode</h3>
+                    <p>Immersive viewing experience with customizable ambient lighting and distractions removed.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Getting Started -->
+        <section class="getting-started">
+            <h2>Getting Started</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Enable Features</h3>
+                    <p>Click the extension icon and toggle the features you want to use.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Customize Layout</h3>
+                    <p>Right-click on YouTube to access the layout customization options.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Set Shortcuts</h3>
+                    <p>Configure keyboard shortcuts for quick access to your favorite features.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Setup -->
+        <section class="quick-setup">
+            <h2>Quick Setup</h2>
+            <div class="setup-options">
+                <div class="preset-layouts">
+                    <h3>Choose a Preset Layout</h3>
+                    <div class="layout-options">
+                        <button class="layout-button" data-layout="classic">
+                            <span class="layout-icon">📺</span>
+                            Classic
+                        </button>
+                        <button class="layout-button" data-layout="modern">
+                            <span class="layout-icon">🎯</span>
+                            Modern
+                        </button>
+                        <button class="layout-button" data-layout="compact">
+                            <span class="layout-icon">💎</span>
+                            Compact
+                        </button>
+                    </div>
+                </div>
+
+                <div class="feature-toggles">
+                    <h3>Enable Features</h3>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="enhancedPlayer" checked>
+                        <span class="toggle-slider"></span>
+                        <span class="toggle-label">Enhanced Player</span>
+                    </label>
+
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="thumbnailPreviews" checked>
+                        <span class="toggle-slider"></span>
+                        <span class="toggle-label">Thumbnail Previews</span>
+                    </label>
+
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="cinemaMode" checked>
+                        <span class="toggle-slider"></span>
+                        <span class="toggle-label">Cinema Mode</span>
+                    </label>
+                </div>
+            </div>
+            <button id="completeSetup" class="primary-button">Complete Setup</button>
+        </section>
+
+        <!-- Help & Resources -->
+        <section class="resources">
+            <h2>Help & Resources</h2>
+            <div class="resource-links">
+                <a href="#" class="resource-link" id="tutorialLink">
+                    <span class="resource-icon">📚</span>
+                    Tutorial
+                </a>
+                <a href="#" class="resource-link" id="shortcutsLink">
+                    <span class="resource-icon">⌨️</span>
+                    Keyboard Shortcuts
+                </a>
+                <a href="#" class="resource-link" id="supportLink">
+                    <span class="resource-icon">💬</span>
+                    Support
+                </a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="welcome-footer">
+            <p>Version 1.0.0</p>
+            <button id="skipButton" class="text-button">Skip Setup</button>
+        </footer>
+    </div>
+
+    <script type="module" src="scripts/welcome.js"></script>
+</body>
+</html>

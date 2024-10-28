@@ -1,0 +1,308 @@
+<!-- options.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Layout Enhancer Settings</title>
+    <link rel="stylesheet" href="styles/options.css">
+</head>
+<body>
+    <div class="options-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <img src="icons/icon48.png" alt="Logo" class="logo">
+                <h1>Settings</h1>
+            </div>
+            <ul class="nav-links">
+                <li>
+                    <button class="nav-button active" data-section="layout">
+                        <span class="nav-icon">📐</span>
+                        Layout
+                    </button>
+                </li>
+                <li>
+                    <button class="nav-button" data-section="features">
+                        <span class="nav-icon">⚡</span>
+                        Features
+                    </button>
+                </li>
+                <li>
+                    <button class="nav-button" data-section="shortcuts">
+                        <span class="nav-icon">⌨️</span>
+                        Shortcuts
+                    </button>
+                </li>
+                <li>
+                    <button class="nav-button" data-section="appearance">
+                        <span class="nav-icon">🎨</span>
+                        Appearance
+                    </button>
+                </li>
+                <li>
+                    <button class="nav-button" data-section="advanced">
+                        <span class="nav-icon">🛠️</span>
+                        Advanced
+                    </button>
+                </li>
+            </ul>
+            <div class="sidebar-footer">
+                <button id="resetButton" class="text-button">Reset All Settings</button>
+                <span class="version">v1.0.0</span>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Layout Settings -->
+            <section id="layout" class="settings-section active">
+                <h2>Layout Settings</h2>
+                <div class="settings-grid">
+                    <div class="layout-preview">
+                        <div class="preview-container">
+                            <!-- Dynamic layout preview will be rendered here -->
+                        </div>
+                        <div class="layout-controls">
+                            <button class="preset-button" data-layout="classic">Classic</button>
+                            <button class="preset-button" data-layout="modern">Modern</button>
+                            <button class="preset-button" data-layout="compact">Compact</button>
+                            <button class="preset-button" data-layout="custom">Custom</button>
+                        </div>
+                    </div>
+
+                    <div class="panel-settings">
+                        <h3>Panel Configuration</h3>
+                        <div class="panel-controls">
+                            <div class="panel-item">
+                                <label>Video Player</label>
+                                <select id="playerPosition">
+                                    <option value="top-left">Top Left</option>
+                                    <option value="top-right">Top Right</option>
+                                    <option value="bottom-left">Bottom Left</option>
+                                    <option value="bottom-right">Bottom Right</option>
+                                </select>
+                            </div>
+                            <div class="panel-item">
+                                <label>Watch Later</label>
+                                <select id="watchLaterPosition">
+                                    <option value="top-left">Top Left</option>
+                                    <option value="top-right">Top Right</option>
+                                    <option value="bottom-left">Bottom Left</option>
+                                    <option value="bottom-right">Bottom Right</option>
+                                </select>
+                            </div>
+                            <div class="panel-item">
+                                <label>Search Results</label>
+                                <select id="searchPosition">
+                                    <option value="top-left">Top Left</option>
+                                    <option value="top-right">Top Right</option>
+                                    <option value="bottom-left">Bottom Left</option>
+                                    <option value="bottom-right">Bottom Right</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features Settings -->
+            <section id="features" class="settings-section">
+                <h2>Feature Settings</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-header">
+                            <h3>Enhanced Player</h3>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="enhancedPlayer">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="feature-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="autoplayNext">
+                                <span>Autoplay Next Video</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="rememberSpeed">
+                                <span>Remember Playback Speed</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="rememberQuality">
+                                <span>Remember Video Quality</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-header">
+                            <h3>Thumbnail Previews</h3>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="thumbnailPreviews">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="feature-options">
+                            <label class="range-label">
+                                Preview Delay
+                                <input type="range" id="previewDelay" min="0" max="2000" step="100">
+                                <span class="range-value">500ms</span>
+                            </label>
+                            <label class="range-label">
+                                Preview Size
+                                <input type="range" id="previewSize" min="100" max="400" step="50">
+                                <span class="range-value">250px</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-header">
+                            <h3>Cinema Mode</h3>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="cinemaMode">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="feature-options">
+                            <label class="range-label">
+                                Dimming Level
+                                <input type="range" id="dimmingLevel" min="0" max="100" step="10">
+                                <span class="range-value">70%</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="hideComments">
+                                <span>Hide Comments</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Keyboard Shortcuts -->
+            <section id="shortcuts" class="settings-section">
+                <h2>Keyboard Shortcuts</h2>
+                <div class="shortcuts-container">
+                    <div class="shortcut-group">
+                        <h3>Layout Controls</h3>
+                        <div class="shortcut-item">
+                            <span class="shortcut-label">Toggle Layout</span>
+                            <div class="shortcut-input" data-command="toggleLayout">
+                                <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>L</kbd>
+                            </div>
+                        </div>
+                        <div class="shortcut-item">
+                            <span class="shortcut-label">Toggle Cinema Mode</span>
+                            <div class="shortcut-input" data-command="toggleCinema">
+                                <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>C</kbd>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="shortcut-group">
+                        <h3>Player Controls</h3>
+                        <div class="shortcut-item">
+                            <span class="shortcut-label">Speed Up</span>
+                            <div class="shortcut-input" data-command="speedUp">
+                                <kbd>Shift</kbd> + <kbd>></kbd>
+                            </div>
+                        </div>
+                        <div class="shortcut-item">
+                            <span class="shortcut-label">Slow Down</span>
+                            <div class="shortcut-input" data-command="slowDown">
+                                <kbd>Shift</kbd> + <kbd><</kbd>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Appearance Settings -->
+            <section id="appearance" class="settings-section">
+                <h2>Appearance Settings</h2>
+                <div class="appearance-grid">
+                    <div class="theme-selector">
+                        <h3>Theme</h3>
+                        <div class="theme-options">
+                            <button class="theme-button" data-theme="light">
+                                <div class="theme-preview light"></div>
+                                Light
+                            </button>
+                            <button class="theme-button" data-theme="dark">
+                                <div class="theme-preview dark"></div>
+                                Dark
+                            </button>
+                            <button class="theme-button" data-theme="system">
+                                <div class="theme-preview system"></div>
+                                System
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="color-customization">
+                        <h3>Custom Colors</h3>
+                        <div class="color-inputs">
+                            <label class="color-input">
+                                Accent Color
+                                <input type="color" id="accentColor" value="#ff0000">
+                            </label>
+                            <label class="color-input">
+                                Background Color
+                                <input type="color" id="backgroundColor" value="#ffffff">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Advanced Settings -->
+            <section id="advanced" class="settings-section">
+                <h2>Advanced Settings</h2>
+                <div class="advanced-grid">
+                    <div class="data-management">
+                        <h3>Data Management</h3>
+                        <div class="button-group">
+                            <button id="exportData" class="action-button">
+                                Export Settings
+                            </button>
+                            <button id="importData" class="action-button">
+                                Import Settings
+                            </button>
+                            <input type="file" id="importFile" hidden accept=".json">
+                        </div>
+                    </div>
+
+                    <div class="performance">
+                        <h3>Performance</h3>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="enableAnimations">
+                            <span>Enable Animations</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="preloadThumbnails">
+                            <span>Preload Thumbnails</span>
+                        </label>
+                    </div>
+
+                    <div class="debugging">
+                        <h3>Debugging</h3>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="enableLogging">
+                            <span>Enable Debug Logging</span>
+                        </label>
+                        <button id="viewLogs" class="text-button">View Logs</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Save Button -->
+        <div class="save-bar">
+            <button id="saveSettings" class="primary-button">Save Changes</button>
+            <span class="save-status"></span>
+        </div>
+    </div>
+
+    <script type="module" src="scripts/options.js"></script>
+</body>
+</html>

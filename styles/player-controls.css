@@ -1,0 +1,351 @@
+/* player-controls.css */
+.enhanced-player-controls {
+    --control-spacing: 8px;
+    --button-size: 36px;
+    --slider-height: 4px;
+    --tooltip-background: rgba(28, 28, 28, 0.9);
+  }
+  
+  /* Main controls container */
+  .enhanced-player-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: opacity 0.3s ease;
+    z-index: 2000;
+  }
+  
+  /* Control rows */
+  .controls-row {
+    display: flex;
+    align-items: center;
+    gap: var(--control-spacing);
+  }
+  
+  .controls-row.primary {
+    justify-content: space-between;
+  }
+  
+  .controls-row.secondary {
+    justify-content: flex-end;
+  }
+  
+  /* Control buttons */
+  .control-button {
+    width: var(--button-size);
+    height: var(--button-size);
+    border-radius: 50%;
+    border: none;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.2s ease;
+  }
+  
+  .control-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .control-button:active {
+    transform: scale(0.95);
+  }
+  
+  .control-button svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  /* Sliders */
+  .slider-container {
+    flex: 1;
+    position: relative;
+    height: var(--slider-height);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .slider-track {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+  }
+  
+  .slider-progress {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    background: var(--yt-enhanced-primary);
+    border-radius: 2px;
+    transition: width 0.1s linear;
+  }
+  
+  .slider-handle {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    transition: transform 0.2s ease;
+    display: none;
+  }
+  
+  .slider-container:hover .slider-handle {
+    display: block;
+  }
+  
+  /* Time display */
+  .time-display {
+    font-size: 14px;
+    color: white;
+    font-family: 'YouTube Noto', Roboto, Arial, sans-serif;
+    min-width: 100px;
+    text-align: center;
+  }
+  
+  /* Speed control */
+  .speed-control {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .speed-menu {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--tooltip-background);
+    border-radius: 4px;
+    padding: 8px;
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 120px;
+  }
+  
+  .speed-control:hover .speed-menu {
+    display: flex;
+  }
+  
+  .speed-option {
+    padding: 6px 12px;
+    color: white;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background 0.2s ease;
+  }
+  
+  .speed-option:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .speed-option.active {
+    background: var(--yt-enhanced-primary);
+  }
+  
+  /* Quality control */
+  .quality-control {
+    position: relative;
+  }
+  
+  .quality-menu {
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    background: var(--tooltip-background);
+    border-radius: 4px;
+    padding: 8px;
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 150px;
+  }
+  
+  .quality-control:hover .quality-menu {
+    display: flex;
+  }
+  
+  .quality-option {
+    padding: 6px 12px;
+    color: white;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background 0.2s ease;
+  }
+  
+  .quality-option:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Cinema mode */
+  .cinema-mode .enhanced-player-controls {
+    bottom: 40px;
+  }
+  
+  /* Markers */
+  .marker {
+    position: absolute;
+    width: 4px;
+    height: 8px;
+    background: var(--yt-enhanced-primary);
+    transform: translateX(-50%);
+    cursor: pointer;
+  }
+  
+  .marker:hover::after {
+    content: attr(data-label);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--tooltip-background);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  
+  /* Tooltips */
+  [data-tooltip] {
+    position: relative;
+  }
+  
+  [data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--tooltip-background);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    margin-bottom: 8px;
+  }
+  
+  /* Advanced settings panel */
+  .advanced-settings {
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    background: var(--tooltip-background);
+    border-radius: 4px;
+    padding: 16px;
+    display: none;
+    min-width: 250px;
+    margin-bottom: 8px;
+  }
+  
+  .settings-button.active + .advanced-settings {
+    display: block;
+  }
+  
+  .settings-section {
+    margin-bottom: 16px;
+  }
+  
+  .settings-section:last-child {
+    margin-bottom: 0;
+  }
+  
+  .settings-title {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  
+  .settings-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 0;
+  }
+  
+  .settings-label {
+    color: white;
+    font-size: 13px;
+  }
+  
+  /* Custom checkboxes */
+  .enhanced-checkbox {
+    width: 36px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .enhanced-checkbox::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: white;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: all 0.2s ease;
+  }
+  
+  .enhanced-checkbox.checked {
+    background: var(--yt-enhanced-primary);
+  }
+  
+  .enhanced-checkbox.checked::after {
+    transform: translateX(16px);
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .enhanced-player-controls {
+      padding: 12px;
+    }
+  
+    .control-button {
+      --button-size: 32px;
+    }
+  
+    .time-display {
+      min-width: 80px;
+      font-size: 12px;
+    }
+  }
+  
+  /* Touch device optimizations */
+  @media (hover: none) {
+    .slider-handle {
+      display: block;
+      width: 16px;
+      height: 16px;
+    }
+  
+    .speed-menu,
+    .quality-menu,
+    .advanced-settings {
+      display: none !important;
+    }
+  
+    .control-button.touch-active {
+      background: rgba(255, 255, 255, 0.1);
+    }
+  }
